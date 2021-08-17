@@ -1,10 +1,16 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
-import Container from './styles';
+import Container, { NumberBtn } from './styles';
+
+const NumberArray = ['AC', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'];
 
 const Numbers = () => (
   <Container>
-    <h1>hello</h1>
+    {NumberArray.map((number) => (
+      <NumberBtn key={number} number={number}>
+        {number}
+      </NumberBtn>
+    ))}
   </Container>
 );
 
