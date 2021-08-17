@@ -8,7 +8,7 @@ class Calculator extends PureComponent {
     return (
       <Container>
         <ValueDisplay>
-          <p>8</p>
+          <p>0</p>
         </ValueDisplay>
         <Keyboard />
       </Container>
