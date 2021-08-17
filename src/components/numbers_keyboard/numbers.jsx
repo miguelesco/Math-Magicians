@@ -2,11 +2,11 @@
 import React from 'react';
 import Container, { NumberBtn } from './styles';
 
-const NumberArray = ['AC', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'];
+const numberArray = ['AC', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'];
 
 const Numbers = () => (
   <Container>
-    {NumberArray.map((number) => (
+    {numberArray.map((number) => (
       <NumberBtn key={number} number={number}>
         {number}
       </NumberBtn>

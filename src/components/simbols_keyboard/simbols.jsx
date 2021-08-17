@@ -1,10 +1,18 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
-import Container from './styles';
+import Container, { SimbolsBtn } from './styles';
+
+const symbolsArray = ['+', 'x', '-', '+', '='];
 
 const Simbols = () => (
   <Container>
-    <h1>hello</h1>
+    {symbolsArray.map((symbol) => (
+      <SimbolsBtn key={symbol}>
+        {' '}
+        {symbol}
+        {' '}
+      </SimbolsBtn>
+    ))}
   </Container>
 );
 
