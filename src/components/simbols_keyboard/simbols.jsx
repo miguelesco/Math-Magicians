@@ -2,7 +2,7 @@
 import React from 'react';
 import Container, { SimbolsBtn } from './styles';
 
-const symbolsArray = ['+', 'x', '-', '+', '='];
+const symbolsArray = ['÷', 'x', '-', '+', '='];
 
 const Simbols = () => (
   <Container>
