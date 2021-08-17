@@ -1,12 +1,16 @@
 /* eslint-disable linebreak-style */
 import React, { PureComponent } from 'react';
-import Container from './styles';
+import Keyboard from '../keyboard';
+import Container, { ValueDisplay } from './styles';
 
 class Calculator extends PureComponent {
   render() {
     return (
       <Container>
-        <h1>hola</h1>
+        <ValueDisplay>
+          <p>5</p>
+        </ValueDisplay>
+        <Keyboard />
       </Container>
     );
   }
