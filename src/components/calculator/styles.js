@@ -18,6 +18,13 @@ export const ValueDisplay = styled.div`
   background-color: gray;
   display: flex;
   justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1.8em;
+  color: #fff;
+  p {
+    margin: 0;
+  }
 `;
 
 export default Container;

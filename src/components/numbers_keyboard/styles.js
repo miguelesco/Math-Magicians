@@ -1,17 +1,13 @@
 /* eslint-disable linebreak-style */
 import styled from 'styled-components';
-import device from '../../styles/breakPoints';
 
 const Container = styled.div`
-  width: 100%;
+  width: 70%;
   height: 100%;
   background-color: #f0f0f0;
   display: grid;
   place-items: center;
   grid-template-columns: auto auto auto;
-  @media only screen and (${device.lg}){
-    width: 70%;
-  }
 `;
 
 export const NumberBtn = styled.button`

@@ -9,9 +9,6 @@ const KeyboardContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
 `;
 
 export default KeyboardContainer;
