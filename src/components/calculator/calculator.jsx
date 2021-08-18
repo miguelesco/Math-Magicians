@@ -15,15 +15,9 @@ class Calculator extends PureComponent {
     this.updateValue = this.updateValue.bind(this);
   }
 
-  updateValue(obj) {
-    if (obj.keyboardSymbol === '=') {
-      const newvalue = calculate(this.state, obj.keyboardValue);
-      this.setState((state) => ({ ...state, ...newvalue }));
-    }
-    if (!obj.keyboardValue) {
-      this.setState({ value: 0 });
-    }
-    this.setState({ value: `${obj.keyboardValue} ${obj.keyboardSymbol} ${obj.keyboardValue2}` });
+  updateValue(value) {
+    const newvalue = calculate(this.state, value);
+    this.setState((state) => ({ ...state, ...newvalue }));
   }
 
   render() {
@@ -33,9 +27,9 @@ class Calculator extends PureComponent {
         <ValueDisplay>
           <p>{total}</p>
           {' '}
-          <p>{next}</p>
-          {' '}
           <p>{operation}</p>
+          {' '}
+          <p>{next}</p>
         </ValueDisplay>
         <Keyboard updateValue={this.updateValue} />
       </Container>

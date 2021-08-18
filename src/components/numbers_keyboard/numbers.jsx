@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container, { NumberBtn } from './styles';
 
-const numberArray = ['AC', '+/-', '%', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'];
+const numberArray = ['AC', '+/-', '%', '7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '.'];
 
 function Numbers({ updateKeyboardValue }) {
   return (
