@@ -8,16 +8,17 @@ class Calculator extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value: 0,
+      total: null,
+      next: null,
+      operation: null,
     };
     this.updateValue = this.updateValue.bind(this);
   }
 
-  updateValue(obj, buttonName) {
-    console.log(obj, buttonName);
+  updateValue(obj) {
     if (obj.keyboardSymbol === '=') {
-      const newvalue = calculate(obj, buttonName);
-      this.setState({ value: newvalue.total });
+      const newvalue = calculate(this.state, obj.keyboardValue);
+      this.setState((state) => ({ ...state, ...newvalue }));
     }
     if (!obj.keyboardValue) {
       this.setState({ value: 0 });
@@ -26,11 +27,15 @@ class Calculator extends PureComponent {
   }
 
   render() {
-    const { value } = this.state;
+    const { total, next, operation } = this.state;
     return (
       <Container>
         <ValueDisplay>
-          <p>{ value }</p>
+          <p>{total}</p>
+          {' '}
+          <p>{next}</p>
+          {' '}
+          <p>{operation}</p>
         </ValueDisplay>
         <Keyboard updateValue={this.updateValue} />
       </Container>
