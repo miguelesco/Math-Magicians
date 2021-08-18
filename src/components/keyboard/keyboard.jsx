@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Numbers from '../numbers_keyboard/numbers';
 import Simbols from '../simbols_keyboard/simbols';
 import KeyboardContainer from './styles';
+import handdleValues from '../../logic/handdleValues';
 
 class Keyboard extends PureComponent {
   constructor(props) {
@@ -20,51 +21,10 @@ class Keyboard extends PureComponent {
   updateKeyboardValue(value) {
     const { updateValue } = this.props;
     this.setState((state) => {
-      const keyboard = state.keyboardSymbol ? state.keyboardValue2 : state.keyboardValue;
-      switch (value) {
-        case 'AC':
-          return {
-            keyboardSymbol: '',
-            keyboardValue: '',
-            keyboardValue2: '',
-          };
-
-        case '+/-': {
-          const invertKeyboard = (Number(keyboard) * -1).toString();
-
-          if (state.keyboardSymbol) {
-            return ({
-              keyboardValue2: invertKeyboard,
-            });
-          }
-          return ({
-            keyboardValue: invertKeyboard,
-          });
-        }
-
-        case '.':
-          if (state.keyboardSymbol) {
-            return ({
-              keyboardValue2: `${keyboard}.`,
-            });
-          }
-          return ({
-            keyboardValue: `${keyboard}.`,
-          });
-
-        default:
-          if (!state.keyboardSymbol) {
-            return {
-              keyboardValue: state.keyboardValue + value,
-            };
-          }
-          return {
-            keyboardValue2: state.keyboardValue2 + value,
-          };
-      }
+      const newState = handdleValues(value, state);
+      updateValue(newState);
+      return newState;
     });
-
-    updateValue(this.state);
   }
 
   updateKeyboardSymbol(symbol) {
