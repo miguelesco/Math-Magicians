@@ -8,7 +8,7 @@ class Calculator extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      total: null,
+      total: null || 0,
       next: null,
       operation: null,
     };
