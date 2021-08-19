@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { PureComponent } from 'react';
 import Keyboard from '../keyboard';
-import Container, { ValueDisplay } from './styles';
+import Container, { ValueDisplay, Error } from './styles';
 import calculate from '../../logic/calculate';
 
 class Calculator extends PureComponent {
@@ -22,6 +22,12 @@ class Calculator extends PureComponent {
 
   render() {
     const { total, next, operation } = this.state;
+    let error = null;
+    if (next === '0' && operation === '÷') {
+      error = 'Division by zero is undefined';
+    } else {
+      error = null;
+    }
     return (
       <Container>
         <ValueDisplay>
@@ -31,7 +37,8 @@ class Calculator extends PureComponent {
           {' '}
           <p>{next}</p>
         </ValueDisplay>
-        <Keyboard updateValue={this.updateValue} />
+        <Error>{error}</Error>
+        <Keyboard updateValue={this.updateValue} error={error} />
       </Container>
     );
   }

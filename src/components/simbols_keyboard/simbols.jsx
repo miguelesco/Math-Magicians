@@ -5,11 +5,17 @@ import Container, { SimbolsBtn } from './styles';
 
 const symbolsArray = ['÷', 'x', '-', '+', '='];
 
-function Simbols({ updateKeyboardSymbol }) {
+function Simbols({ updateKeyboardSymbol, error }) {
+  const clickSymbol = (symbol) => {
+    if (error === null) {
+      updateKeyboardSymbol(symbol);
+    }
+  };
+
   return (
     <Container>
       {symbolsArray.map((symbol) => (
-        <SimbolsBtn key={symbol} onClick={() => updateKeyboardSymbol(symbol)}>
+        <SimbolsBtn key={symbol} onClick={() => clickSymbol(symbol)}>
           {' '}
           {symbol}
           {' '}
@@ -21,6 +27,11 @@ function Simbols({ updateKeyboardSymbol }) {
 
 Simbols.propTypes = {
   updateKeyboardSymbol: PropTypes.func.isRequired,
+  error: PropTypes.string,
+};
+
+Simbols.defaultProps = {
+  error: null,
 };
 
 export default Simbols;

@@ -27,4 +27,20 @@ export const ValueDisplay = styled.div`
   }
 `;
 
+export const Error = styled.div`
+  background: #222831;
+  height: calc(5px + 1.5vw);
+  padding: 0.5rem;
+  text-align: left;
+  font-size: calc(#{12px} + #{0.3}vw);
+  font-weight: 700;
+  line-height: 32px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-end;
+  width: 100%;
+`;
+
 export default Container;

@@ -18,10 +18,11 @@ class Keyboard extends PureComponent {
   }
 
   render() {
+    const { error } = this.props;
     return (
       <KeyboardContainer>
         <Numbers updateKeyboardValue={this.updateKeyboard} />
-        <Simbols updateKeyboardSymbol={this.updateKeyboard} />
+        <Simbols updateKeyboardSymbol={this.updateKeyboard} error={error} />
       </KeyboardContainer>
     );
   }
@@ -29,6 +30,11 @@ class Keyboard extends PureComponent {
 
 Keyboard.propTypes = {
   updateValue: PropTypes.func.isRequired,
+  error: PropTypes.string,
+};
+
+Keyboard.defaultProps = {
+  error: null,
 };
 
 export default Keyboard;
