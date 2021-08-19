@@ -4,7 +4,7 @@ import Keyboard from '../keyboard';
 import Container, { ValueDisplay, Error } from './styles';
 import calculate from '../../logic/calculate';
 
-function Calculator() {
+const Calculator = () => {
   const [calculationObj, setCalculationObj] = useState({
     total: null || 0,
     next: null,
@@ -37,6 +37,6 @@ function Calculator() {
       <Keyboard updateValue={updateValue} error={error} />
     </Container>
   );
-}
+};
 
 export default Calculator;
