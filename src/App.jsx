@@ -7,12 +7,14 @@ import {
 import GlobalStyles from './styles/GlobalStyles';
 import Calculator from './components/calculator/calculator';
 import Home from './components/home/Home';
+import Navbar from './components/navbar/Navbar';
 
 class App extends react.PureComponent {
   render() {
     return (
       <Router>
         <GlobalStyles />
+        <Navbar />
         <Switch>
           <Route path="/" exact>
             <Home />
