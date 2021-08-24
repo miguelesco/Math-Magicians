@@ -2,7 +2,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div` 
-  width: 100%;
+  width: 600px;
+  max-width: calc(100% - 20px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,6 +11,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
+  margin: 0 auto;
+  padding-bottom: 150px;
+`;
+
+export const Title = styled.h1`
+  font-size: 3em;
+  text-align: center;
 `;
 
 export const ValueDisplay = styled.div`
@@ -28,6 +36,7 @@ export const ValueDisplay = styled.div`
 `;
 
 export const Error = styled.div`
+  box-sizing: border-box;
   background: #222831;
   height: calc(5px + 1.5vw);
   padding: 0.5rem;

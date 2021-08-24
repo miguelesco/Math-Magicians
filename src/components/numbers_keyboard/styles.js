@@ -18,8 +18,8 @@ export const NumberBtn = styled.button`
   cursor: pointer;
   font-size: 1.2rem;
   padding: 2rem 0.75rem;
-  grid-column-start: ${(props) => (props.number === 0 ? '1' : '0')};
-  grid-column-end: ${(props) => (props.number === 0 ? '3' : '0')};
+  grid-column-start: ${(props) => (props.number === '0' ? '1' : '0')};
+  grid-column-end: ${(props) => (props.number === '0' ? '3' : '0')};
 `;
 
 export default Container;

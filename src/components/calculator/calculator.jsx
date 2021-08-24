@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 import Keyboard from '../keyboard';
-import Container, { ValueDisplay, Error } from './styles';
+import Container, { ValueDisplay, Error, Title } from './styles';
 import calculate from '../../logic/calculate';
 
 const Calculator = () => {
@@ -25,17 +25,20 @@ const Calculator = () => {
     error = null;
   }
   return (
-    <Container>
-      <ValueDisplay>
-        <p>{total}</p>
-        {' '}
-        <p>{operation}</p>
-        {' '}
-        <p>{next}</p>
-      </ValueDisplay>
-      <Error>{error}</Error>
-      <Keyboard updateValue={updateValue} error={error} />
-    </Container>
+    <>
+      <Title>Lets do some Math</Title>
+      <Container>
+        <ValueDisplay>
+          <p>{total}</p>
+          {' '}
+          <p>{operation}</p>
+          {' '}
+          <p>{next}</p>
+        </ValueDisplay>
+        <Error>{error}</Error>
+        <Keyboard updateValue={updateValue} error={error} />
+      </Container>
+    </>
   );
 };
 

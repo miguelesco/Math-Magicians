@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import react from 'react';
 import {
   BrowserRouter as Router,
