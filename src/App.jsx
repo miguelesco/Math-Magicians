@@ -6,9 +6,10 @@ import {
   Route,
 } from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
+import Navbar from './components/navbar/Navbar';
 import Calculator from './components/calculator/calculator';
 import Home from './components/home/Home';
-import Navbar from './components/navbar/Navbar';
+import Quote from './components/quote/Quote';
 
 class App extends react.PureComponent {
   render() {
@@ -22,6 +23,9 @@ class App extends react.PureComponent {
           </Route>
           <Route path="/calculator">
             <Calculator />
+          </Route>
+          <Route path="/quote">
+            <Quote />
           </Route>
         </Switch>
       </Router>
