@@ -1,14 +1,34 @@
+/* eslint-disable linebreak-style */
 import react from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
+import Navbar from './components/navbar/Navbar';
 import Calculator from './components/calculator/calculator';
+import Home from './components/home/Home';
+import Quote from './components/quote/Quote';
 
 class App extends react.PureComponent {
   render() {
     return (
-      <react.Fragment>
+      <Router>
         <GlobalStyles />
-        <Calculator />
-      </react.Fragment>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/calculator">
+            <Calculator />
+          </Route>
+          <Route path="/quote">
+            <Quote />
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }
