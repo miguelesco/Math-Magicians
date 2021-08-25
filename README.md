@@ -23,6 +23,9 @@ To get a local copy up and running follow these simple steps:
 4. In the project folder run `npm install`
 5. Then run in the terminal `npm run start` (for development enviroment) or `npm run build`
 
+- To run the tests:
+
+Run `npm test` on a Terminal.
 ## :blue_book: Learning Objectives
 
 - Use React components.
