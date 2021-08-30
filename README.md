@@ -9,9 +9,9 @@ In this project, I set up a Calculator UI
 
 ## :red_circle: Live Demo
 
-[Live Preview Link](https://miguelesco.github.io/math-magicians) 
-[Heroku](https://math-magicians-me.herokuapp.com/#/)
-[Netlify](https://math-magicians-me.netlify.app/#/)
+- [Github](https://miguelesco.github.io/math-magicians) 
+- [Heroku](https://math-magicians-me.herokuapp.com/#/)
+- [Netlify](https://math-magicians-me.netlify.app/#/)
 
 ## :hammer: Built With
 
